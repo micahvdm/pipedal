@@ -15,3 +15,10 @@ sudo dpkg --install pipedal_1.0.15_arm64.deb
 sudo pipedalconfig --install --port $ipaddr:80 --prefix /usr
 
 sudo cp jack.service /usr/lib/systemd/system
+sudo adduser --no-create-home --system --group jack
+sudo adduser pistomp jack --quiet
+sudo adduser root jack --quiet
+sudo adduser jack audio --quiet
+sudo cp jackdrc /etc/
+sudo chmod +x /etc/jackdrc
+sudo chown jack:jack /etc/jackdrc
