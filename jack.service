@@ -4,10 +4,12 @@ Description=JACK2 Audio Server
 
 [Service]
 Environment=JACK_NO_AUDIO_RESERVATION=1
-#Environment=JACK_PROMISCUOUS_SERVER=jack
+Environment=JACK_PROMISCUOUS_SERVER=jack
 LimitRTPRIO=infinity
 LimitMEMLOCK=infinity
 ExecStart=/etc/jackdrc
+User=jack
+Group=jack
 Restart=always
 RestartSec=1
 
